@@ -1,0 +1,11 @@
+.img-container-zoom {
+    overflow: hidden;
+}
+
+.img-zoom {
+    transition: transform 0.5s ease;
+}
+
+.card-especialidad:hover .img-zoom {
+    transform: scale(1.1);
+}

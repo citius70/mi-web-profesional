@@ -15,147 +15,9 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
+<link rel="stylesheet" href="css/global.css">
 
 
-    <style>
-        :root {
-            --azul-tech: #004a99;
-            --dorado-maker: #f1c40f;
-            --fondo-light: #f8fafd;
-        }
-
-        body {
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--fondo-light);
-        }
-
-        .navbar {
-            background-color: var(--azul-tech);
-        }
-
-        /* Hero */
-        .hero-section {
-            background:
-                linear-gradient(rgba(0, 40, 85, 0.8), rgba(0, 25, 55, 0.9)),
-                url("https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1350&q=80");
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 80px 0 120px 0;
-            border-bottom: 4px solid var(--dorado-maker);
-        }
-
-        .hero-section h1 {
-            font-weight: 800;
-            color: var(--dorado-maker);
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        @media (max-width: 576px) {
-            .hero-section h1 {
-                font-size: 2.2rem;
-            }
-        }
-
-        @media (min-width: 577px) {
-            .hero-section h1 {
-                font-size: 3rem;
-            }
-        }
-
-        /* Contadores */
-        .contadores-overlap {
-            margin-top: -60px;
-            position: relative;
-            z-index: 10;
-        }
-
-        .contadores-overlap .container {
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            background: linear-gradient(135deg, var(--azul-tech), #00356d) !important;
-        }
-
-        @media (max-width: 767.98px) {
-            .contadores-overlap .col-6 {
-                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                padding-bottom: 0.75rem;
-            }
-        }
-
-        /* Tarjetas */
-        .card-especialidad {
-            border: none;
-            transition: all 0.35s ease;
-            border-bottom: 3px solid transparent;
-        }
-
-        .card-especialidad:hover {
-            transform: translateY(-6px);
-            border-bottom-color: var(--dorado-maker);
-            box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
-        }
-
-        .icon-box {
-            width: 60px;
-            height: 60px;
-            background: rgba(0, 74, 153, 0.1);
-            color: var(--azul-tech);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .img-container-zoom {
-            overflow: hidden;
-        }
-
-        .img-zoom {
-            transition: transform 0.5s ease;
-        }
-
-        .card-especialidad:hover .img-zoom {
-            transform: scale(1.1);
-        }
-
-        footer {
-            background-color: #1a1d20;
-            padding: 40px 0;
-        }
-
-        /* Animación fade */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(25px);
-            transition: all 0.8s ease;
-        }
-
-        .fade-in-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Glow botones */
-        .btn-warning:hover {
-            box-shadow: 0 0 12px rgba(241,196,15,0.6);
-        }
-
-        .btn-outline-light:hover {
-            box-shadow: 0 0 12px rgba(255,255,255,0.4);
-        }
-
-        /* Pulso icono CPU */
-        .hero-section i.bi-cpu {
-            animation: pulsoTech 3s ease-in-out infinite;
-        }
-
-        @keyframes pulsoTech {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.12); opacity: 0.85; }
-        }
-    </style>
 </head>
 
 <body>
@@ -174,7 +36,13 @@
                         <span class="badge bg-light text-primary mb-3 mt-0 px-3 py-2 rounded-pill fw-bold text-uppercase">
                             Profesor de Tecnología
                         </span>
+<p class="mb-4">"La práctica sin teoría es ciega; la teoría sin práctica es estéril." - Karl Marx</p>
 
+
+                            <img
+                                src="imagenes/inicio/alberto1.JPG"
+                                class="hero-avatar"
+                                alt="Foto de Alberto Durán Pérez"/>
                         <h1 class="fw-bold">
                             <i class="bi bi-cpu me-2"></i>
                             Tecnología con código... y tiza
@@ -202,25 +70,36 @@
             <div class="container py-4 text-white">
                 <div class="row g-4 text-center">
                     <div class="col-6 col-md-3 border-end border-white border-opacity-10">
-                        <i class="bi bi-rocket-takeoff fs-2"></i>
-                        <h3 class="fw-bold mb-0">+15</h3>
-                        <small>Proyectos Maker</small>
-                    </div>
-                    <div class="col-6 col-md-3 border-end border-white border-opacity-10">
-                        <i class="bi bi-mortarboard fs-2"></i>
-                        <h3 class="fw-bold mb-0">12</h3>
-                        <small>Años Docencia</small>
-                    </div>
-                    <div class="col-6 col-md-3 border-end border-white border-opacity-10">
-                        <i class="bi bi-printer fs-2"></i>
-                        <h3 class="fw-bold mb-0">100%</h3>
-                        <small>Diseño 3D</small>
-                    </div>
-                    <div class="col-6 col-md-3">
-                        <i class="bi bi-code-slash fs-2"></i>
-                        <h3 class="fw-bold mb-0">20+</h3>
-                        <small>Repositorios</small>
-                    </div>
+  <i class="bi bi-rocket-takeoff fs-2"></i>
+  <h3 class="fw-bold mb-0">
+    <span class="contador" data-valor="15">0</span>+
+  </h3>
+  <small>Proyectos Maker</small>
+</div>
+
+<div class="col-6 col-md-3 border-end border-white border-opacity-10">
+  <i class="bi bi-mortarboard fs-2"></i>
+  <h3 class="fw-bold mb-0">
+    <span class="contador" data-valor="26">0</span>
+  </h3>
+  <small>Años Docencia</small>
+</div>
+
+<div class="col-6 col-md-3 border-end border-white border-opacity-10">
+  <i class="bi bi-printer fs-2"></i>
+  <h3 class="fw-bold mb-0">
+    <span class="contador" data-valor="100">0</span>%
+  </h3>
+  <small>Diseño 3D</small>
+</div>
+
+<div class="col-6 col-md-3">
+  <i class="bi bi-code-slash fs-2"></i>
+  <h3 class="fw-bold mb-0">
+    <span class="contador" data-valor="20">0</span>+
+  </h3>
+  <small>Repositorios</small>
+</div>
                 </div>
             </div>
         </section>
@@ -372,24 +251,17 @@
     <!-- 🔥 Footer desde plantilla -->
     <div data-include="plantillas/footer.html"></div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS (bundle con Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Animaciones fade -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const elementos = document.querySelectorAll(".fade-in-up");
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => { 
-                    if (entry.isIntersecting) entry.target.classList.add("visible");
-                });
-            }, { threshold: 0.2 });
-            elementos.forEach(el => observer.observe(el));
-        });
-    </script>
+<!-- Includes (navbar, footer, etc.) -->
+<script src="js/includes.js"></script>
 
-    <!-- Include plantillas -->
-    <script src="js/includes.js"></script>
+<!-- Animaciones (fade-in, etc.) -->
+<script src="js/animaciones.js"></script>
+
+<!-- Contadores animados -->
+<script src="js/contadores.js"></script>
 
 </body>
 </html>

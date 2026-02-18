@@ -1,0 +1,13 @@
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--fondo-light);
+}
+
+.navbar {
+    background-color: var(--azul-tech);
+}
+
+footer {
+    background-color: #1a1d20;
+    padding: 40px 0;
+}

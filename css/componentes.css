@@ -1,0 +1,18 @@
+.contadores-overlap {
+    margin-top: -60px;
+    position: relative;
+    z-index: 10;
+}
+
+.contadores-overlap .container {
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, var(--azul-tech), #00356d) !important;
+}
+
+@media (max-width: 767.98px) {
+    .contadores-overlap .col-6 {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 0.75rem;
+    }
+}

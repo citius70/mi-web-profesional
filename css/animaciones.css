@@ -1,0 +1,27 @@
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: all 0.8s ease;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.btn-warning:hover {
+    box-shadow: 0 0 12px rgba(241,196,15,0.6);
+}
+
+.btn-outline-light:hover {
+    box-shadow: 0 0 12px rgba(255,255,255,0.4);
+}
+
+.hero-section i.bi-cpu {
+    animation: pulsoTech 3s ease-in-out infinite;
+}
+
+@keyframes pulsoTech {
+    0%,100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.12); opacity: 0.85; }
+}
