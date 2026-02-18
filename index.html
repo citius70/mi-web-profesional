@@ -1,13 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Prof. Tecnología | IES Frei Martín Sarmiento</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Bootstrap CSS -->
+    <link 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+        rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link 
+        rel="stylesheet" 
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
 
     <style>
         :root {
@@ -17,7 +25,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--fondo-light);
         }
 
@@ -25,11 +33,11 @@
             background-color: var(--azul-tech);
         }
 
-        /* Hero Personalizado */
+        /* Hero */
         .hero-section {
             background:
                 linear-gradient(rgba(0, 40, 85, 0.8), rgba(0, 25, 55, 0.9)),
-                url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1350&q=80');
+                url("https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1350&q=80");
             background-size: cover;
             background-position: center;
             color: white;
@@ -38,13 +46,24 @@
         }
 
         .hero-section h1 {
-            font-size: 3rem;
             font-weight: 800;
             color: var(--dorado-maker);
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
-        /* Contadores con estilo Tech */
+        @media (max-width: 576px) {
+            .hero-section h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (min-width: 577px) {
+            .hero-section h1 {
+                font-size: 3rem;
+            }
+        }
+
+        /* Contadores */
         .contadores-overlap {
             margin-top: -60px;
             position: relative;
@@ -57,17 +76,24 @@
             background: linear-gradient(135deg, var(--azul-tech), #00356d) !important;
         }
 
-        /* Tarjetas de Especialidad */
+        @media (max-width: 767.98px) {
+            .contadores-overlap .col-6 {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                padding-bottom: 0.75rem;
+            }
+        }
+
+        /* Tarjetas */
         .card-especialidad {
             border: none;
-            transition: all 0.3s ease;
+            transition: all 0.35s ease;
             border-bottom: 3px solid transparent;
         }
 
         .card-especialidad:hover {
-            transform: translateY(-10px);
+            transform: translateY(-6px);
             border-bottom-color: var(--dorado-maker);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+            box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
         }
 
         .icon-box {
@@ -82,255 +108,288 @@
             margin-bottom: 1.5rem;
         }
 
-        /* Efecto de Zoom para las imágenes */
         .img-container-zoom {
             overflow: hidden;
-            /* Imprescindible para que la imagen no se salga al crecer */
         }
 
         .img-zoom {
             transition: transform 0.5s ease;
-            /* Hace que el zoom sea suave */
         }
 
         .card-especialidad:hover .img-zoom {
             transform: scale(1.1);
-            /* Escala la imagen al 110% */
         }
 
         footer {
             background-color: #1a1d20;
             padding: 40px 0;
         }
+
+        /* Animación fade */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(25px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Glow botones */
+        .btn-warning:hover {
+            box-shadow: 0 0 12px rgba(241,196,15,0.6);
+        }
+
+        .btn-outline-light:hover {
+            box-shadow: 0 0 12px rgba(255,255,255,0.4);
+        }
+
+        /* Pulso icono CPU */
+        .hero-section i.bi-cpu {
+            animation: pulsoTech 3s ease-in-out infinite;
+        }
+
+        @keyframes pulsoTech {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.12); opacity: 0.85; }
+        }
     </style>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
-        <div class="container">
-            
-            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
-                <img src="tu-foto.jpg" class="rounded-circle border border-2 border-white me-2"
-                    style="width: 35px; height: 35px; object-fit: cover;">
-                <span>Alberto Durán Pérez</span>
-            </a>
+    <!-- 🔥 Navbar desde plantilla -->
+    <div data-include="/plantillas/navbar.html"></div>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="galeria.html">Proyectos</a></li>
-                    <li class="nav-item"><a class="nav-link" href="intranet.html">Recursos Alumnos</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
 
-    <header class="hero-section text-center">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-9">
-                    <span
-                        class="badge bg-light text-primary mb-3 mt-0 px-3 py-2 rounded-pill fw-bold text-uppercase">Profesor
-                        de Tecnología</span>
-                    <h1><p class="navbar-brand fw-bold">
-                <i class="bi bi-cpu me-2"></i>
-                    </p>Tecnología con código... y tiza</h1>
-                    <p class="lead m-2 mt-3 opacity-90">
-                        Compartiendo conocimiento en el <strong>IES Frei Martín Sarmiento</strong> (Pontevedra). </p>
-                        <p class="lead mb-5 opacity-90">Explorando la educación técnica desde 1998.
-                    </p>
-                    <div class="d-flex justify-content-center gap-3">
-                        <a href="galeria.html" class="btn btn-warning btn-lg px-4 fw-bold">Ver Proyectos</a>
-                        <a href="#especialidades" class="btn btn-outline-light btn-lg px-4">Mis Áreas</a>
+        <!-- HERO -->
+        <header class="hero-section text-center">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-9">
+                        <span class="badge bg-light text-primary mb-3 mt-0 px-3 py-2 rounded-pill fw-bold text-uppercase">
+                            Profesor de Tecnología
+                        </span>
+
+                        <h1 class="fw-bold">
+                            <i class="bi bi-cpu me-2"></i>
+                            Tecnología con código... y tiza
+                        </h1>
+
+                        <p class="lead m-2 mt-3 opacity-90">
+                            Compartiendo conocimiento en el
+                            <strong>IES Frei Martín Sarmiento</strong> (Pontevedra).
+                        </p>
+                        <p class="lead mb-5 opacity-90">
+                            Explorando la educación técnica desde 1998.
+                        </p>
+
+                        <div class="d-flex justify-content-center gap-3 flex-wrap">
+                            <a href="galeria.html" class="btn btn-warning btn-lg px-4 fw-bold">Ver Proyectos</a>
+                            <a href="#especialidades" class="btn btn-outline-light btn-lg px-4">Mis Áreas</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <section class="contadores-overlap">
-        <div class="container py-4 text-white">
-            <div class="row g-4 text-center">
-                <div class="col-6 col-md-3 border-end border-white border-opacity-10">
-                    <i class="bi bi-rocket-takeoff fs-2"></i>
-                    <h3 class="fw-bold mb-0">+15</h3>
-                    <small>Proyectos Maker</small>
-                </div>
-                <div class="col-6 col-md-3 border-end border-white border-opacity-10">
-                    <i class="bi bi-mortarboard fs-2"></i>
-                    <h3 class="fw-bold mb-0">12</h3>
-                    <small>Años Docencia</small>
-                </div>
-                <div class="col-6 col-md-3 border-end border-white border-opacity-10">
-                    <i class="bi bi-printer fs-2"></i>
-                    <h3 class="fw-bold mb-0">100%</h3>
-                    <small>Diseño 3D</small>
-                </div>
-                <div class="col-6 col-md-3">
-                    <i class="bi bi-code-slash fs-2"></i>
-                    <h3 class="fw-bold mb-0">20+</h3>
-                    <small>Repositorios</small>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="especialidades" class="py-5">
-        <div class="container py-5">
-            <div class="text-center mb-5">
-                <h2 class="fw-bold">Bloques de Contenido</h2>
-                <p class="text-muted">Especialidades técnicas impartidas</p>
-            </div>
-
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <a href="robotica.html" class="text-decoration-none">
-                        <div class="card h-100 p-4 card-especialidad shadow-sm" style="cursor: pointer;">
-                            <div class="icon-box">
-                                <i class="bi bi-robot fs-3"></i>
-                            </div>
-                            <h4 class="fw-bold text-dark">Robótica y Control
-                            </h4>
-                            <p class="text-muted small">Programación de microcontroladores (Arduino/ESP32) y sistemas
-                                automáticos para 4º ESO y Bachillerato.</p>
-
-                            <div class="mt-auto pt-3 text-primary fw-bold small">
-                                Explorar laboratorio <i class="bi bi-arrow-right"></i>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="fabricaciondigital.html" class="text-decoration-none">
-                        <div class="card h-100 p-4 card-especialidad shadow-sm" style="cursor: pointer;">
-                            <div class="icon-box">
-                                <i class="bi bi-layers fs-3"></i>
-                            </div>
-                            <h4 class="fw-bold text-dark">Fabricación Digital</h4>
-                            <p class="text-muted small">Diseño paramétrico y producción mediante impresión 3D y corte
-                                láser en el aula-taller.</p>
-
-                            <div class="mt-auto pt-3 text-primary fw-bold small">
-                                Ver diseños y modelos <i class="bi bi-arrow-right"></i>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <div class="card h-100 p-4 card-especialidad shadow-sm">
-                        <div class="icon-box">
-                            <i class="bi bi-lightning-charge fs-3"></i>
-                        </div>
-                        <h4 class="fw-bold">Energía y Sostenibilidad</h4>
-                        <p class="text-muted small">Estudio de sistemas eléctricos eficientes y energías renovables
-                            aplicadas a proyectos reales.</p>
+        <!-- CONTADORES -->
+        <section class="contadores-overlap fade-in-up" aria-label="Indicadores de experiencia">
+            <div class="container py-4 text-white">
+                <div class="row g-4 text-center">
+                    <div class="col-6 col-md-3 border-end border-white border-opacity-10">
+                        <i class="bi bi-rocket-takeoff fs-2"></i>
+                        <h3 class="fw-bold mb-0">+15</h3>
+                        <small>Proyectos Maker</small>
+                    </div>
+                    <div class="col-6 col-md-3 border-end border-white border-opacity-10">
+                        <i class="bi bi-mortarboard fs-2"></i>
+                        <h3 class="fw-bold mb-0">12</h3>
+                        <small>Años Docencia</small>
+                    </div>
+                    <div class="col-6 col-md-3 border-end border-white border-opacity-10">
+                        <i class="bi bi-printer fs-2"></i>
+                        <h3 class="fw-bold mb-0">100%</h3>
+                        <small>Diseño 3D</small>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <i class="bi bi-code-slash fs-2"></i>
+                        <h3 class="fw-bold mb-0">20+</h3>
+                        <small>Repositorios</small>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-
-    <section class="py-5 bg-light">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-end mb-4">
-                <div>
-                    <h2 class="fw-bold mb-0">Proyectos Recientes</h2>
-                    <p class="text-muted">Lo último del aula-taller</p>
+        <!-- ESPECIALIDADES -->
+        <section id="especialidades" class="py-5 fade-in-up">
+            <div class="container py-5">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">Bloques de Contenido</h2>
+                    <p class="text-muted">Especialidades técnicas impartidas</p>
                 </div>
-                <a href="galeria.html" class="btn btn-outline-primary btn-sm rounded-pill px-3">Ver toda la galería</a>
-            </div>
 
-            <div class="row g-4">
+                <div class="row g-4">
+                    <!-- Robótica -->
+                    <div class="col-md-4">
+                        <a href="robotica.html" class="text-decoration-none">
+                            <div class="card h-100 p-4 card-especialidad shadow-sm">
+                                <div class="icon-box">
+                                    <i class="bi bi-robot fs-3"></i>
+                                </div>
+                                <h4 class="fw-bold text-dark">Robótica y Control</h4>
+                                <p class="text-muted small">
+                                    Programación de microcontroladores Micro:bit y Arduino/ESP32.
+                                </p>
+                                <div class="mt-auto pt-3 text-primary fw-bold small">
+                                    Explorar laboratorio <i class="bi bi-arrow-right"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
 
+                    <!-- Fabricación Digital -->
+                    <div class="col-md-4">
+                        <a href="fabricaciondigital.html" class="text-decoration-none">
+                            <div class="card h-100 p-4 card-especialidad shadow-sm">
+                                <div class="icon-box">
+                                    <i class="bi bi-layers fs-3"></i>
+                                </div>
+                                <h4 class="fw-bold text-dark">Fabricación Digital</h4>
+                                <p class="text-muted small">
+                                    Diseño paramétrico e impresión 3D y corte láser.
+                                </p>
+                                <div class="mt-auto pt-3 text-primary fw-bold small">
+                                    Ver diseños y modelos <i class="bi bi-arrow-right"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
 
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm border-0 overflow-hidden card-especialidad">
-                        <div class="img-container-zoom">
-                            <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=600&q=80"
-                                class="card-img-top img-zoom" alt="Proyecto" style="height: 200px; object-fit: cover;">
-                        </div>
-
-                        <div class="card-body">
-                            <span class="badge-custom badge-microbit mb-2">1º ESO</span>
-                            <h5 class="fw-bold">Estación Meteorológica</h5>
-                            <p class="card-text small text-muted">Registro de temperatura y humedad enviado por radio.
+                    <!-- Energía -->
+                    <div class="col-md-4">
+                        <div class="card h-100 p-4 card-especialidad shadow-sm">
+                            <div class="icon-box">
+                                <i class="bi bi-lightning-charge fs-3"></i>
+                            </div>
+                            <h4 class="fw-bold">Energía y Sostenibilidad</h4>
+                            <p class="text-muted small">
+                                Estudio de sistemas eléctricos eficientes y renovables.
                             </p>
                         </div>
-
-                        <div class="card-footer bg-white border-0 pb-3">
-                            <div class="d-flex align-items-center">
-                                <img src="tu-foto.jpg" class="rounded-circle me-2"
-                                    style="width: 25px; height: 25px; object-fit: cover;" alt="Profesor">
-                                <small class="text-muted">Por: Alberto Durán</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm border-0 overflow-hidden card-especialidad">
-                        <div class="img-container-zoom">
-                            <img src="https://images.unsplash.com/photo-1553406830-ef2513450d76?auto=format&fit=crop&w=600&q=80"
-                                class="card-img-top img-zoom" alt="Proyecto Arduino"
-                                style="height: 200px; object-fit: cover;">
-                        </div>
-
-                        <div class="card-body">
-                            <span class="badge-custom badge-arduino mb-2">4º ESO</span>
-                            <h5 class="fw-bold">Brazo Robótico BT</h5>
-                            <p class="card-text small text-muted">Control de 4 servomotores mediante una App móvil
-                                creada en App Inventor.</p>
-                        </div>
-
-                        <div class="card-footer bg-white border-0 pb-3">
-                            <div class="d-flex align-items-center">
-                                <img src="tu-foto.jpg" class="rounded-circle me-2"
-                                    style="width: 25px; height: 25px; object-fit: cover;" alt="Profesor">
-                                <small class="text-muted">Por: Alberto Durán</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm border-0 overflow-hidden card-especialidad">
-                        <div class="img-container-zoom"></div>
-                        <img src="https://unsplash.com/es/fotos/una-impresora-3d-naranja-con-un-cable-amarillo-conectado-a-ella-90IK5KjPHjk?auto=format&fit=crop&w=600&q=80"
-                            class="card-img-top img-zoom" alt="Proyecto 3D" style="height: 200px; object-fit: cover;">
-                        <div class="card-body">
-                            <span class="badge bg-secondary mb-2 rounded-pill" style="font-size: 0.7rem;">3D
-                                PRINT</span>
-                            <h5 class="fw-bold">Llaveros Paramétricos</h5>
-                            <p class="card-text small text-muted">Diseño con OpenSCAD y fabricación en PLA para el
-                                mercadillo solidario.</p>
-                        </div>
-                        <div class="card-footer bg-white border-0 pb-3">
-                            <div class="d-flex align-items-center">
-                                <img src="tu-foto.jpg" class="rounded-circle me-2"
-                                    style="width: 25px; height: 25px; object-fit: cover;" alt="Profesor">
-                                <small class="text-muted">Por: Alberto Durán</small>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <!-- PROYECTOS -->
+        <section class="py-5 bg-light fade-in-up">
+            <div class="container">
+                <div class="d-flex justify-content-between align-items-end mb-4">
+                    <div>
+                        <h2 class="fw-bold mb-0">Proyectos Recientes</h2>
+                        <p class="text-muted">Lo último del aula-taller</p>
+                    </div>
+                    <a href="galeria.html" class="btn btn-outline-primary btn-sm rounded-pill px-3">
+                        Ver toda la galería
+                    </a>
+                </div>
 
-    <footer class="text-center text-white-50">
-        <div class="container">
-            <p class="mb-0">Alberto Durán Pérez - Prof. de Tecnología do IES Frei Martín Sarmiento (Pontevedra)</p>
-            <small>© 2026 | Desarrollado con Bootstrap 5</small>
-        </div>
-    </footer>
+                <div class="row g-4">
 
+                    <!-- Proyecto 1 -->
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm border-0 overflow-hidden card-especialidad">
+                            <div class="img-container-zoom">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?auto=format&fit=crop&w=600&q=80"
+                                    class="card-img-top img-zoom"
+                                    style="height: 200px; object-fit: cover"
+                                />
+                            </div>
+                            <div class="card-body">
+                                <span class="badge bg-primary rounded-pill mb-2">1º ESO</span>
+                                <h5 class="fw-bold">Estación Meteorológica</h5>
+                                <p class="card-text small text-muted">
+                                    Registro de temperatura y humedad enviado por radio.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 2 -->
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm border-0 overflow-hidden card-especialidad">
+                            <div class="img-container-zoom">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1553406830-ef2513450d76?auto=format&fit=crop&w=600&q=80"
+                                    class="card-img-top img-zoom"
+                                    style="height: 200px; object-fit: cover"
+                                />
+                            </div>
+                            <div class="card-body">
+                                <span class="badge bg-info text-dark rounded-pill mb-2">4º ESO</span>
+                                <h5 class="fw-bold">Brazo Robótico BT</h5>
+                                <p class="card-text small text-muted">
+                                    Controlado mediante App Inventor.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto 3 -->
+                    <div class="col-md-4">
+                        <div class="card h-100 shadow-sm border-0 overflow-hidden card-especialidad">
+                            <div class="img-container-zoom">
+                                <img 
+                                    src="https://images.unsplash.com/photo-1589571739149-47ed80eae6ba?auto=format&fit=crop&w=600&q=80"
+                                    class="card-img-top img-zoom"
+                                    style="height: 200px; object-fit: cover"
+                                />
+                            </div>
+                            <div class="card-body">
+                                <span class="badge bg-secondary rounded-pill mb-2" style="font-size: 0.7rem;">
+                                    3D PRINT
+                                </span>
+                                <h5 class="fw-bold">Llaveros Paramétricos</h5>
+                                <p class="card-text small text-muted">
+                                    Diseño con OpenSCAD y fabricación en PLA.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 🔥 Footer desde plantilla -->
+    <div data-include="/plantillas/footer.html"></div>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
 
+    <!-- Animaciones fade -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const elementos = document.querySelectorAll(".fade-in-up");
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => { 
+                    if (entry.isIntersecting) entry.target.classList.add("visible");
+                });
+            }, { threshold: 0.2 });
+            elementos.forEach(el => observer.observe(el));
+        });
+    </script>
+
+    <!-- Include plantillas -->
+    <script src="/js/includes.js"></script>
+
+</body>
 </html>
