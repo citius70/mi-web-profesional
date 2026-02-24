@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robótica y Control | Tecnología con código y tiza</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        :root {
+            --azul-code: #0d1117;
+            --neon-arduino: #00979d;
+            --microbit-orange: #e95420;
+            --dorado: #f1c40f;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background-color: #004a99;
+        }
+
+        .tech-header {
+            position: relative;
+            /* Sustituye esta URL por la imagen que prefieras */
+            background: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            /* Efecto Parallax suave */
+            color: white;
+            padding: 100px 0;
+            border-bottom: 4px solid var(--neon-arduino);
+        }
+
+        /* Capa semi-transparente para asegurar la legibilidad del texto */
+        .tech-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(13, 17, 23, 0.85);
+            /* El 0.75 controla la transparencia */
+            z-index: 1;
+        }
+
+        /* Aseguramos que el texto esté por encima de la capa oscura */
+        .tech-header .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .microbit-section {
+            background: #ffffff;
+            border-radius: 15px;
+            border-left: 8px solid var(--microbit-orange);
+            margin-bottom: 50px;
+        }
+
+        .arduino-section {
+            background: #ffffff;
+            border-radius: 15px;
+            border-left: 8px solid var(--neon-arduino);
+            margin-bottom: 50px;
+        }
+
+        .code-window {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            font-family: 'Consolas', monospace;
+            font-size: 0.9rem;
+        }
+
+        .step-card {
+            border: none;
+            border-left: 5px solid var(--neon-arduino);
+            background: white;
+            transition: 0.3s;
+            margin-bottom: 1rem;
+        }
+
+        .step-card:hover {
+            transform: translateX(5px);
+        }
+
+        .badge-custom {
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            display: inline-block;
+            margin: 2px;
+        }
+
+        .badge-arduino {
+            background: rgba(0, 151, 157, 0.1);
+            color: var(--neon-arduino);
+            border: 1px solid var(--neon-arduino);
+        }
+
+        .badge-microbit {
+            background: rgba(233, 84, 32, 0.1);
+            color: var(--microbit-orange);
+            border: 1px solid var(--microbit-orange);
+        }
+
+        footer {
+            margin-top: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html"><i class="bi bi-cpu me-2"></i>Tecno-Frei</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="galeria.html">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="robotica.html">Robótica</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="tech-header text-center mb-5">
+        <div class="container">
+            <h1 class="display-5 fw-bold text-uppercase">&lt;/Robótica_y_Control&gt;</h1>
+            <p class="opacity-75">Innovación en cada nivel</p>
+        </div>
+    </header>
+
+
+
+    <main class="container pb-5">
+
+        <!--Sección para 1º y 2º ESO con Micro:bit y programación por bloques -->
+        <section class="microbit-section p-4 shadow-sm">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="fw-bold" style="color: var(--microbit-orange);">
+                        <i class="bi bi-grid-3x3-gap-fill me-2"></i>1º y 2º ESO: Iniciación con Micro:bit
+                    </h2>
+                    <p class="text-muted">En estos primeros cursos exploramos el control programado mediante
+                        programación por bloques y sensores integrados en la tarjeta <code>micro:bit</code>.</p> <p>Estos son algunos de los retos que realizan los alumnos:</p>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="row g-3" id="contenedor-retos-microbit"></div>
+                </div>
+
+                <div class="col-lg-4 mt-4 mt-lg-0 d-flex flex-column align-items-center">
+                    <div class="ratio ratio-16x9 shadow-lg rounded-4 overflow-hidden border border-4 mb-3"
+                        style="border-color: var(--microbit-orange) !important;">
+                        <iframe src="https://www.youtube.com/embed/dDlfIewNwz8"
+                            title="Proyecto Micro:bit IES Frei Martín" allowfullscreen></iframe>
+                    </div>
+                    <div class="d-flex flex-wrap justify-content-center gap-2 mt-2">
+                        <a href="https://microbit.org/es-es/" target="_blank"
+                            class="badge rounded-pill border border-danger text-danger px-3 py-2 small text-decoration-none">
+                            <i class="bi bi-box-arrow-up-right me-1"></i> Web Oficial Micro:bit
+                        </a>
+                        <a href="https://www.youtube.com/@MicrosoftMakeCode"
+                            class="btn btn-sm btn-outline-danger rounded-pill px-3">Vídeos: Lista de reproducción</a>
+                        <a href="#" class="btn btn-sm btn-outline-danger rounded-pill px-3">Demo Real</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Sección para 4º ESO y Bachillerato con Arduino y C++ -->
+        <section class="arduino-section p-4 shadow-sm">
+
+        <div class="row g-4 pt-1">
+            <div class="col-12 mb-1">
+                <h2 class="fw-bold" style="color: var(--neon-arduino);">
+                    <i class="bi bi-grid-3x3-gap-fill me-2"></i>4º ESO y Bachillerato: Arduino & C++</h2>
+                <p class="text-muted">Proyectos avanzados de control industrial y robótica autónoma con tarjetas <code>Arduino</code>. Su programación se hará en lenguaje C/C++.</p>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="mt-1 p-3 mb-2 bg-white border rounded shadow-sm">
+                    <h6 class="fw-bold small mb-2 text-uppercase" style="letter-spacing: 1px;">Hardware de Aula:</h6>
+                    <span class="badge-custom badge-arduino">Arduino Uno</span>
+                    <span class="badge-custom badge-arduino">ESP32</span>
+                    <span class="badge-custom badge-arduino">Sensores</span>
+                    <span class="badge-custom badge-arduino">Actuadores</span>
+                </div>
+                <div class="card step-card p-3 ms-0 shadow-sm" style="border-left-color: lightsteelblue;">
+                    <h6 class="fw-bold mb-1"><i class="bi bi-cpu me-2"></i>Sensores (Input)</h6>
+                    <p class="small text-muted mb-0">Captación de datos mediante Ultrasonidos, LDR e Infrarrojos.</p>
+                </div>
+                <div class="card step-card p-3 ms-0 shadow-sm" style="border-left-color: lightcoral;">
+                    <h6 class="fw-bold mb-1"><i class="bi bi-code-slash me-2"></i>Lógica de Control</h6>
+                    <p class="small text-muted mb-0">Programación de algoritmos de decisión en C/C++.</p>
+                </div>
+                <div class="card step-card p-3 ms-0 shadow-sm" style="border-left-color: lightgreen;">
+                    <h6 class="fw-bold mb-1"><i class="bi bi-gear me-2"></i>Actuadores (Output)</h6>
+                    <p class="small text-muted mb-0">Control de motores, servos y sistemas de visualización LCD.</p>
+                </div>
+            </div>
+
+            
+
+            <div class="col-lg-6">
+                <div class="mt-1 mb-2 p-3 bg-white border rounded shadow-sm">
+                    <h6 class="fw-bold small mb-2 text-uppercase" style="letter-spacing: 1px;">Software de Aula:</h6>
+                    <span class="badge-custom badge-microbit">Arduino IDLE</span>
+                    <span class="badge-custom badge-microbit">Visual Code</span>
+                </div>
+                <div class="code-window shadow-lg">
+    <div class="small text-ligtgrey mb-2">// Control de iluminación automático (LDR + LED)</div>
+    <pre class="mb-0"><code><span style="color: #569cd6;">void</span> <span style="color: #dcdcaa;">setup</span>() {
+  <span style="color: #dcdcaa;">pinMode</span>(<span style="color: #b5cea8;">13</span>, <span style="color: #569cd6;">OUTPUT</span>); <span style="color: #6a9955;">// Configura el LED integrado</span>
+}
+
+<span style="color: #569cd6;">void</span> <span style="color: #dcdcaa;">loop</span>() {
+  <span style="color: #c586c0;">if</span> (<span style="color: #dcdcaa;">analogRead</span>(A0) < <span style="color: #b5cea8;">300</span>) { 
+    <span style="color: #dcdcaa;">digitalWrite</span>(<span style="color: #b5cea8;">13</span>, <span style="color: #569cd6;">HIGH</span>); <span style="color: #6a9955;">// Enciende si hay oscuridad</span>
+  } <span style="color: #c586c0;">else</span> {
+    <span style="color: #dcdcaa;">digitalWrite</span>(<span style="color: #b5cea8;">13</span>, <span style="color: #569cd6;">LOW</span>);  <span style="color: #6a9955;">// Apaga si hay luz</span>
+  }
+}</code></pre>
+</div>
+                
+            </div>
+        </div>
+        </section>
+    </main>
+
+    <footer class="bg-dark text-white py-4 text-center">
+        <div class="container">
+            <p class="mb-0 small">Tecnología con código y tiza | IES Frei Martín Sarmiento</p>
+            <small class="text-white-50">Pontevedra, 2026</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const retosMicrobit = [
+            { titulo: "Dado Digital", descripcion: "Uso del acelerómetro para generar números aleatorios.", icono: "bi-dice-6" },
+            { titulo: "Termómetro", descripcion: "Control de temperatura del aula de Tecnología.", icono: "bi-thermometer-half" },
+            { titulo: "Radio-Chat", descripcion: "Comunicación inalámbrica entre compañeros.", icono: "bi-broadcast" },
+            { titulo: "Alarma Antirrobo", descripcion: "Uso del sensor táctil y logo como pulsador.", icono: "bi-alarm" },
+            { titulo: "Contador de pasos", descripcion: "Cuidamos la salud con el sensor de movimiento.", icono: "bi-person-walking" },
+            { titulo: "Control de iluminación", descripcion: "Automatización de luces con sensor de luz.", icono: "bi-lightbulb" },
+        ];
+
+        function cargarRetos() {
+            const contenedor = document.getElementById('contenedor-retos-microbit');
+            if (!contenedor) return;
+            contenedor.innerHTML = "";
+            retosMicrobit.forEach(reto => {
+                const tarjetaHtml = `
+                <div class="col-md-4 mb-3">
+                    <div class="p-3 border rounded bg-light h-100 shadow-sm border-start border-4 border-warning">
+                        <i class="bi ${reto.icono} text-danger fs-4 mb-2"></i>
+                        <h6 class="fw-bold mb-1">${reto.titulo}</h6>
+                        <p class="small mb-0 text-muted">${reto.descripcion}</p>
+                    </div>
+                </div>`;
+                contenedor.innerHTML += tarjetaHtml;
+            });
+        }
+        document.addEventListener('DOMContentLoaded', cargarRetos);
+    </script>
+</body>
+
+</html>

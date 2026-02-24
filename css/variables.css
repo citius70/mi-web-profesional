@@ -1,5 +1,10 @@
 :root {
-    --azul-tech: #004a99;
-    --dorado-maker: #f1c40f;
-    --fondo-light: #f8fafd;
+  --azul-tech: #004a99;
+  --dorado-maker: #f1c40f;
+  --fondo-light: #f8fafd;
+  --hero-overlay-top: rgba(0, 40, 85, 0.85);
+  --hero-overlay-bottom: rgba(0, 25, 55, 0.92);
+  --hero-title-shadow: rgba(0, 0, 0, 0.5);
+  --hero-text-shadow: rgba(0, 0, 0, 0.25);
+  --contadores-divider: rgba(255, 255, 255, 0.15);
 }

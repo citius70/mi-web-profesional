@@ -5,3 +5,41 @@
 @import "proyectos.css";
 @import "animaciones.css";
 @import "componentes.css";
+
+/* ================================
+   FOOTER: enlaces, iconos y espaciado
+=================================== */
+
+/* Color base más visible en fondo oscuro */
+footer a.link-light {
+  color: rgba(255, 255, 255, 0.85) !important;
+  text-decoration: none;
+}
+
+/* Hover/Focus: subrayado elegante y color pleno */
+footer a.link-light:hover,
+footer a.link-light:focus,
+footer a.link-light.link-underline-opacity-0:hover,
+footer a.link-light.link-underline-opacity-0:focus {
+  color: #fff !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 2px;
+  text-decoration-color: currentColor;
+}
+
+/* Alinear iconos con el texto y dar un respiro mínimo */
+footer .bi {
+  vertical-align: -2px;
+  margin-right: 0.35rem;
+}
+
+/* Interlineado cómodo en listas del footer */
+footer ul li {
+  line-height: 1.4;
+}
+
+/* Separación del footer respecto al contenido anterior (ajusta a tu gusto) */
+footer {
+  margin-top: 3.5rem;
+}

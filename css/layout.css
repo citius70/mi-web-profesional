@@ -11,3 +11,13 @@ footer {
     background-color: #1a1d20;
     padding: 40px 0;
 }
+
+/* global.css (o el CSS que uses en todas las páginas) */
+footer a.link-light:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+footer .bi {
+  vertical-align: -2px; /* alinear iconos con el texto */
+}
