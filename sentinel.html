@@ -473,6 +473,28 @@
     .arrow {
       font-size: 1.2rem;
     }
+
+    /* Botón Volver a Galería */
+    .back-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: rgba(35, 134, 54, .15);
+      border: 1px solid rgba(35, 134, 54, .4);
+      border-radius: 6px;
+      color: #3fb950;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .back-button:hover {
+      background: rgba(35, 134, 54, .25);
+      border-color: rgba(35, 134, 54, .6);
+      transform: translateX(-3px);
+    }
   </style>
 </head>
 
@@ -502,6 +524,9 @@
         <span class="tag ai">🤖 YOLOv8</span>
         <span class="tag ind">🦺 Seguridad Industrial</span>
       </div>
+      <a href="galeria.html" class="back-button">
+        ← Volver a Galería
+      </a>
     </div>
     <div class="scroll-hint">
       <div class="arrow">↓</div>Desplázate para ver más
