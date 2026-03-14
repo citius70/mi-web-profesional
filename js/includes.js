@@ -1,5 +1,11 @@
+/**
+ * Sistema de Includes Dinámicos
+ * Carga archivos HTML (plantillas) de forma asíncrona en contenedores [data-include]
+ * 
+ * Uso:
+ * <div data-include="plantillas/navbar.html"></div>
+ */
 
-// Evita ejecución doble si el script se inyecta dos veces
 if (!window.__includesLoaded__) {
   window.__includesLoaded__ = true;
 
@@ -9,22 +15,35 @@ if (!window.__includesLoaded__) {
 
     slots.forEach(async (slot) => {
       const url = slot.getAttribute('data-include');
+      
       try {
-        const resp = await fetch(url, { cache: 'no-cache' });
-        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        // Usar cache por defecto para mejor rendimiento
+        const resp = await fetch(url, { 
+          cache: 'default' // Ahora respeta el cache del navegador
+        });
+        
+        if (!resp.ok) {
+          throw new Error(`HTTP ${resp.status}: No se pudo cargar ${url}`);
+        }
+        
         const html = await resp.text();
 
-        // Sustituye el contenedor ENTERO por el fragmento
+        // Reemplazar el contenedor ENTERO por el fragmento HTML
         slot.outerHTML = html;
 
-        // Actualiza el año si el fragmento trae #copy-year
-        const y = document.getElementById('copy-year');
-        if (y) y.textContent = new Date().getFullYear();
+        // Actualizar el año en el footer si existe
+        const yearSpan = document.getElementById('copy-year');
+        if (yearSpan) {
+          yearSpan.textContent = new Date().getFullYear();
+        }
       } catch (err) {
-        console.error(`No se pudo incluir ${url}:`, err);
+        console.error(`Error al incluir ${url}:`, err);
+        
+        // Mostrar un mensaje de error amigable
         slot.innerHTML = `
-          <div class="container text-danger small my-3">
-            Error al cargar la plantilla: ${url}
+          <div class="alert alert-warning small my-3 mx-3" role="alert">
+            <i class="bi bi-exclamation-triangle me-2"></i>
+            No se pudo cargar la plantilla: <code>${url}</code>
           </div>`;
       }
     });
