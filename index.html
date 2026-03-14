@@ -48,7 +48,7 @@
 </head>
 
 <body>
-  <!-- 🔥 Navbar desde plantilla -->
+  <!-- Navbar desde plantilla -->
   <div class="navbar-reserva-altura" data-include="plantillas/navbar.html"></div>
 
   <!-- Fallback si no hay JS -->
@@ -77,18 +77,18 @@
               Profesor de Tecnología
             </span>
 
-            <!-- Avatar optimizado -->
+            <!-- Avatar optimizado (CORREGIDO: sin errores HTML) -->
             <picture>
-  <source
-    srcset="imagenes/inicio/alberto1.webp"
-    type="image/webp" />
-  <img
-    src="imagenes/inicio/alberto1.JPG"
-    alt="Foto de perfil"
-    class="hero-avatar"
-    width="280" height="280"           <!-- tamaño nativo recomendado -->
-    <loading="eager" decoding="async" />
-</picture>
+              <source srcset="imagenes/inicio/alberto1.webp" type="image/webp" />
+              <img
+                src="imagenes/inicio/alberto1.JPG"
+                alt="Foto de perfil"
+                class="hero-avatar"
+                width="280"
+                height="280"
+                loading="lazy"
+                decoding="async" />
+            </picture>
 
             <h1 id="home-title" class="fw-bold mt-3">
               Tecnología con <code>&lt;/c0d1g0&gt;</code>... y tiza
@@ -98,8 +98,6 @@
               Compartiendo conocimiento en el <strong>IES Frei Martín Sarmiento</strong> (Pontevedra).
             </p>
             <p class="lead mb-4 opacity-90">Explorando la educación técnica desde <strong>1998</strong>.</p>
-
-            
 
             <div class="d-flex mb-4 justify-content-center gap-3 flex-wrap">
               <a href="galeria.html" class="btn btn-warning btn-lg px-4 fw-bold">Ver Proyectos</a>
@@ -130,13 +128,13 @@
             <small>Años Docencia</small>
           </div>
 
-<div class="col-6 col-md-3 border-end border-white border-opacity-10 text-center">
-  <i class="bi bi-bug fs-2 text-warning" aria-hidden="true"></i>
-  <h3 class="fw-bold mb-0" aria-live="polite">
-    <span class="contador" data-valor="0">0</span>
-  </h3>
-  <small class="text-uppercase" style="font-size: 0.7rem; letter-spacing: 1px;">Errores críticos  <i class="bi bi-emoji-smile ms-1 text-white"></i></small>
-</div>
+          <div class="col-6 col-md-3 border-end border-white border-opacity-10 text-center">
+            <i class="bi bi-bug fs-2 text-warning" aria-hidden="true"></i>
+            <h3 class="fw-bold mb-0" aria-live="polite">
+              <span class="contador" data-valor="0">0</span>
+            </h3>
+            <small class="text-uppercase" style="font-size: 0.7rem; letter-spacing: 1px;">Errores críticos  <i class="bi bi-emoji-smile ms-1 text-white"></i></small>
+          </div>
 
           <div class="col-6 col-md-3">
             <i class="bi bi-tools fs-2" aria-hidden="true"></i>
@@ -149,18 +147,16 @@
       </div>
     </section>
 
-
-    <!--  Cita con semántica: debajo de los contadores -->
-<section class="py-4 py-md-5" aria-label="Cita destacada">
-  <div class="container">
-    <figure class="text-center mx-auto" style="max-width: 820px;">
-      <blockquote class="blockquote fst-italic mb-2">
-        <p class="mb-0">“La práctica sin teoría es ciega; la teoría sin práctica es estéril.” <span class="fst-italic text-primary">- Karl Marx</span>
-     </p>
-      </blockquote>
-     
-  </div>
-</section>
+    <!-- Cita con semántica -->
+    <section class="py-4 py-md-5" aria-label="Cita destacada">
+      <div class="container">
+        <figure class="text-center mx-auto" style="max-width: 820px;">
+          <blockquote class="blockquote fst-italic mb-2">
+            <p class="mb-0">"La práctica sin teoría es ciega; la teoría sin práctica es estéril." <span class="fst-italic text-primary">- Karl Marx</span></p>
+          </blockquote>
+        </figure>
+      </div>
+    </section>
 
     <!-- Sección: Objetivo de la Web -->
     <section class="container mt-1 mb-3 py-1 bg-light rounded-3 shadow-sm" aria-labelledby="mission-title">
@@ -265,7 +261,8 @@
                   class="card-img-top img-zoom"
                   style="height: 200px; object-fit: cover"
                   alt="Puente triangulado con materiales comunes"
-                  loading="lazy" decoding="async"
+                  loading="lazy"
+                  decoding="async"
                 >
               </div>
               <div class="card-body">
@@ -289,12 +286,13 @@
                   class="card-img-top img-zoom"
                   style="height: 200px; object-fit: cover"
                   alt="Brazo robótico controlado mediante aplicación móvil"
-                  loading="lazy" decoding="async"
+                  loading="lazy"
+                  decoding="async"
                 >
               </div>
               <div class="card-body">
                 <span class="badge bg-info rounded-pill mb-2">1º ESO</span>
-            <span class="badge bg-info rounded-pill mb-2">Control programado</span>
+                <span class="badge bg-info rounded-pill mb-2">Control programado</span>
 
                 <h3 class="h5 fw-bold mb-2">Microproyectos con <code>Micro:bit</code></h3>
                 <p class="card-text small text-muted mb-0">
@@ -313,14 +311,13 @@
                   class="card-img-top img-zoom"
                   style="height: 200px; object-fit: cover"
                   alt="Sismógrafo con Micro:bit"
-                  loading="lazy" decoding="async"
+                  loading="lazy"
+                  decoding="async"
                 >
               </div>
               <div class="card-body">
                 <span class="badge bg-warning rounded-pill mb-2" style="font-size: 0.7rem;">3º ESO</span>
-                <span class="badge bg-warning rounded-pill mb-2" style="font-size: 0.7rem;">
-                  Control programado
-                </span>
+                <span class="badge bg-warning rounded-pill mb-2" style="font-size: 0.7rem;">Control programado</span>
                 <h3 class="h5 fw-bold mb-2">Sismógrafo con <code>Micro:bit</code></h3>
                 <p class="card-text small text-muted mb-0">
                   Detección de movimientos sísmicos con sensores.
@@ -334,7 +331,7 @@
     </section>
   </main>
 
-  <!-- 🔥 Footer desde plantilla -->
+  <!-- Footer desde plantilla -->
   <div data-include="plantillas/footer.html"></div>
 
   <!-- Fallback si no hay JS -->
@@ -347,16 +344,16 @@
   </noscript>
 
   <!-- Bootstrap JS (bundle con Popper) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Includes (navbar, footer, etc.) -->
-<script src="js/includes.js"></script>
+  <!-- Includes (navbar, footer, etc.) -->
+  <script src="js/includes.js"></script>
 
-<!-- Animaciones (fade-in, etc.) -->
-<script src="js/animaciones.js"></script>
+  <!-- Animaciones (fade-in, etc.) -->
+  <script src="js/animaciones.js"></script>
 
-<!-- Contadores animados (único script que anima) -->
-<script src="js/contadores.js"></script>
+  <!-- Contadores animados (único script que anima) -->
+  <script src="js/contadores.js"></script>
 
   <!-- Año en footer si no hay JS propio -->
   <script>
