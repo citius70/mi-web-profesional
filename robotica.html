@@ -16,7 +16,7 @@
   <meta property="og:image" content="https://citius70.github.io/mi-web-profesional/imagenes/inicio/og-cover.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- Favicon (ajusta si lo tienes en otra ruta) -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="imagenes/favicon.png" />
 
   <!-- Bootstrap + Icons -->
@@ -25,28 +25,27 @@
 
   <!-- Estilos globales del sitio -->
   <link rel="stylesheet" href="css/global.css" />
-  <!-- Estilos del hero (coherentes con la home) -->
+  <!-- Estilos del hero -->
   <link rel="stylesheet" href="css/hero.css" />
 
   <!-- Estilos específicos de esta página (mínimos) -->
   <style>
-    /* HERO específico de Robótica (reutiliza .hero-section del sitio) */
+    /* HERO específico de Robótica */
     .hero-robotica {
-      /* Gradiente definido en hero.css; aquí solo fijamos imagen de fondo */
       background-image:
         linear-gradient(rgba(0, 40, 85, 0.85), rgba(0, 25, 55, 0.92)),
         url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80");
       background-attachment: fixed;
     }
     @media (max-width: 768px) {
-      .hero-robotica { background-attachment: scroll; } /* Evita glitches en móviles */
+      .hero-robotica { background-attachment: scroll; }
     }
 
-    /* Títulos de sección con variables de color (con fallback) */
+    /* Títulos de sección con colores */
     .titulo-microbit { color: var(--microbit-orange, #e95420); }
     .titulo-arduino  { color: var(--neon-arduino, #00979d); }
 
-    /* Secciones marco (heredan tu estética) */
+    /* Secciones marco */
     .microbit-section,
     .arduino-section {
       background: #ffffff;
@@ -97,14 +96,14 @@
       border: 1px solid var(--microbit-orange, #e95420);
     }
 
-    /* Footer pegado al fondo en páginas cortas */
+    /* Footer pegado al fondo */
     body { min-height: 100vh; display: flex; flex-direction: column; }
     main { flex: 1 0 auto; }
   </style>
 </head>
 
 <body>
-  <!-- Navbar por include (coherente con la HOME) -->
+  <!-- Navbar por include -->
   <div class="navbar-reserva-altura" data-include="plantillas/navbar.html"></div>
   <noscript>
     <nav class="navbar navbar-expand-lg bg-light border-bottom" role="navigation" aria-label="Navegación principal">
@@ -119,12 +118,12 @@
     </nav>
   </noscript>
 
-  <!-- HERO unificado -->
+  <!-- HERO -->
   <header class="hero-section hero-robotica text-center pt-5 pb-4 mb-5" role="banner" aria-labelledby="robotica-title">
     <div class="container">
       <h1 id="robotica-title" class="display-5 fw-bold text-uppercase">Robótica y Control</h1>
       <p class="opacity-75 lead">Innovación en cada nivel: de Micro:bit a Arduino/C++</p>
-      <!-- Migas de pan (opcional, mejora navegación) -->
+      <!-- Migas de pan -->
       <nav aria-label="breadcrumb" class="d-flex justify-content-center mt-2">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a class="text-decoration-none text-light" href="index.html">Inicio</a></li>
@@ -135,7 +134,7 @@
   </header>
 
   <!-- CONTENIDO -->
-  <main class="container pb-">
+  <main class="container pb-5">
 
     <!-- MICRO:BIT -->
     <section class="microbit-section p-4 shadow-sm" aria-labelledby="sec-microbit">
@@ -182,8 +181,8 @@
               Vídeos: Lista de reproducción
             </a>
 
-            <a href="#" class="btn btn-sm btn-outline-danger rounded-pill px-3" aria-disabled="true">
-              Demo Real
+            <a href="galeria.html#robotica" class="btn btn-sm btn-outline-danger rounded-pill px-3">
+              Ver Proyectos
             </a>
           </div>
         </div>
@@ -238,7 +237,7 @@
 
           <div class="code-window shadow-lg" aria-label="Ejemplo de código Arduino">
             <div class="small text-secondary mb-2">// Control de iluminación automático (LDR + LED)</div>
-<pre class="mb-0"><code><span style="color:#569cd6;">void</span> <span style="color:#dcdcaa;">setup</span>() {
+            <pre class="mb-0"><code><span style="color:#569cd6;">void</span> <span style="color:#dcdcaa;">setup</span>() {
   <span style="color:#dcdcaa;">pinMode</span>(<span style="color:#b5cea8;">13</span>, <span style="color:#569cd6;">OUTPUT</span>); <span style="color:#6a9955;">// LED integrado</span>
 }
 <span style="color:#569cd6;">void</span> <span style="color:#dcdcaa;">loop</span>() {
@@ -254,30 +253,22 @@
     </section>
   </main>
 
+  <!-- Footer por plantilla -->
+  <div data-include="plantillas/footer.html"></div>
 
-  <!-- Scripts -->
+  <!-- Fallback si no hay JS -->
+  <noscript>
+    <footer class="border-top mt-5 py-4">
+      <div class="container small text-muted">
+        © <span id="copy-year">2026</span> Tecnologías — IES Frei Martín Sarmiento
+      </div>
+    </footer>
+  </noscript>
+
+  <!-- Bootstrap bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Carga de includes (navbar/footer) -->
+  <!-- Includes (navbar, footer) -->
   <script src="js/includes.js"></script>
-
-  <!-- Script: marcar enlace activo en la navbar una vez cargada -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const markActive = () => {
-        const link = document.querySelector('a.nav-link[href$="robotica.html"]');
-        if (link) {
-          link.classList.add('active');
-          link.setAttribute('aria-current', 'page');
-        }
-      };
-      // Si includes.js inyecta la navbar async, espera un poco
-      if (document.querySelector('[data-include]')) {
-        setTimeout(markActive, 300);
-      } else {
-        markActive();
-      }
-    });
-  </script>
 
   <!-- Script: retos Micro:bit con createElement (accesible y eficiente) -->
   <script>
@@ -291,30 +282,24 @@
     ];
 
     function tarjetaReto({ titulo, descripcion, icono }) {
-      // Columna
       const col = document.createElement('div');
       col.className = 'col-md-4 mb-3';
 
-      // Tarjeta
       const card = document.createElement('div');
       card.className = 'p-3 border rounded bg-light h-100 shadow-sm border-start border-4 border-warning';
 
-      // Icono
       const i = document.createElement('i');
       i.className = `bi ${icono} text-danger fs-4 mb-2`;
       i.setAttribute('aria-hidden', 'true');
 
-      // Título
       const h = document.createElement('h6');
       h.className = 'fw-bold mb-1';
       h.textContent = titulo;
 
-      // Descripción
       const p = document.createElement('p');
       p.className = 'small mb-0 text-muted';
       p.textContent = descripcion;
 
-      // Ensamblado
       card.append(i, h, p);
       col.append(card);
       return col;
@@ -326,41 +311,15 @@
       const frag = document.createDocumentFragment();
       retosMicrobit.forEach(reto => frag.appendChild(tarjetaReto(reto)));
       cont.appendChild(frag);
-    });
-  </script>
 
-
-<!-- Footer por plantilla -->
-<div data-include="plantillas/footer.html"></div>
-
-<!-- Fallback si no hay JS -->
-<noscript>
-  <footer class="border-top mt-5 py-4">
-    <div class="container small text-muted">
-      © <span id="copy-year">2026</span> Tecnologías — IES Frei Martín Sarmiento
-    </div>
-  </footer>
-</noscript>
-
-<!-- Bootstrap bundle -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Includes (debe ir después del div data-include) -->
-<script src="js/includes.js"></script>
-
-<script>
-  // Marca el enlace de Robótica como activo cuando la navbar ya está incluida
-  document.addEventListener('DOMContentLoaded', () => {
-    const markActive = () => {
+      // Marcar enlace activo en navbar
       const link = document.querySelector('a.nav-link[href$="robotica.html"]');
       if (link) {
         link.classList.add('active');
         link.setAttribute('aria-current', 'page');
       }
-    };
-    // Si navbar se inyecta async, espera un poquito
-    setTimeout(markActive, 300);
-  });
-</script>
+    });
+  </script>
 
 </body>
 </html>
