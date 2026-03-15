@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cómo Trabajamos | Tecnología IES Frei Martín Sarmiento</title>
+  <meta name="description" content="Conoce nuestra metodología: combinamos teoría y práctica en un aula-taller innovadora. Vea cómo trabajamos en Tecnología." />
+  <link rel="canonical" href="https://citius70.github.io/mi-web-profesional/como-trabajamos.html" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+  <!-- Estilos globales -->
+  <link rel="stylesheet" href="css/global.css" />
+
+  <!-- Estilos específicos de esta página -->
+  <style>
+    :root {
+      --azul-tech: #004a99;
+      --dorado-maker: #f1c40f;
+      --fondo-light: #f8fafd;
+    }
+
+    /* HERO */
+    .hero-como-trabajamos {
+      background: linear-gradient(135deg, rgba(0, 74, 153, 0.9), rgba(0, 50, 100, 0.95)),
+                  url("https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1920&q=80");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 120px 0;
+      text-align: center;
+      border-bottom: 4px solid var(--dorado-maker);
+    }
+
+    .hero-como-trabajamos h1 {
+      font-weight: 800;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,.4);
+    }
+
+    .hero-como-trabajamos p {
+      font-size: 1.2rem;
+      opacity: 0.95;
+      text-shadow: 0 1px 4px rgba(0,0,0,.3);
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* TARJETAS DE METODOLOGÍA */
+    .metodo-card {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,.08);
+      border-top: 4px solid var(--azul-tech);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .metodo-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0,0,0,.12);
+    }
+
+    .metodo-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .metodo-card h3 {
+      color: var(--azul-tech);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .metodo-card p {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* SECCIÓN DE COMPONENTES */
+    .componentes-section {
+      background: #f8f9fa;
+      padding: 80px 0;
+      margin: 60px 0;
+    }
+
+    .componente {
+      text-align: center;
+      padding: 40px 20px;
+      background: white;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,.05);
+    }
+
+    .componente-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      color: var(--azul-tech);
+    }
+
+    .componente h4 {
+      color: var(--azul-tech);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .componente p {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* GALERÍA DE FOTOS */
+    .galeria-taller {
+      margin: 60px 0;
+    }
+
+    .galeria-taller h2 {
+      color: var(--azul-tech);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 2rem;
+    }
+
+    .foto-taller {
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      height: 300px;
+      background: linear-gradient(135deg, var(--azul-tech), #00356d);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,.1);
+      transition: transform 0.3s ease;
+    }
+
+    .foto-taller:hover {
+      transform: scale(1.02);
+    }
+
+    .foto-taller img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .foto-placeholder {
+      text-align: center;
+      opacity: 0.8;
+    }
+
+    .foto-placeholder i {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    /* VALORES */
+    .valores-section {
+      background: linear-gradient(135deg, rgba(0, 74, 153, 0.05), rgba(241, 196, 15, 0.05));
+      padding: 80px 0;
+      margin: 60px 0;
+    }
+
+    .valor-card {
+      text-align: center;
+      padding: 30px;
+    }
+
+    .valor-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--azul-tech);
+    }
+
+    .valor-card h4 {
+      color: var(--azul-tech);
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .valor-card p {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* CITA DESTACADA */
+    .cita-destacada {
+      background: linear-gradient(135deg, var(--azul-tech), #00356d);
+      color: white;
+      padding: 60px 40px;
+      border-radius: 12px;
+      text-align: center;
+      margin: 60px 0;
+      box-shadow: 0 8px 25px rgba(0,74,153,.2);
+    }
+
+    .cita-destacada p {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .cita-destacada em {
+      font-style: italic;
+      opacity: 0.9;
+      display: block;
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero-como-trabajamos {
+        padding: 80px 0;
+      }
+
+      .foto-taller {
+        height: 250px;
+      }
+
+      .metodo-card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 🔥 Navbar desde plantilla -->
+  <div class="navbar-reserva-altura" data-include="plantillas/navbar.html"></div>
+
+  <!-- Fallback si no hay JS -->
+  <noscript>
+    <nav class="navbar navbar-expand-lg bg-light border-bottom" role="navigation">
+      <div class="container">
+        <a class="navbar-brand fw-semibold" href="index.html">Tecnología</a>
+        <div class="d-flex gap-3">
+          <a class="nav-link" href="index.html">Inicio</a>
+          <a class="nav-link" href="como-trabajamos.html" aria-current="page">Cómo Trabajamos</a>
+          <a class="nav-link" href="galeria.html">Proyectos</a>
+        </div>
+      </div>
+    </nav>
+  </noscript>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main id="main-content">
+    
+    <!-- HERO -->
+    <header class="hero-como-trabajamos" role="banner" aria-labelledby="page-title">
+      <div class="container">
+        <h1 id="page-title">Cómo Trabajamos</h1>
+        <p>Combinamos teoría y práctica para fomentar el aprendizaje activo y creativo en nuestro aula-taller</p>
+      </div>
+    </header>
+
+    <!-- SECCIÓN: NUESTRA METODOLOGÍA -->
+    <section class="container py-5" aria-labelledby="metodologia-title">
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-10 text-center">
+          <h2 id="metodologia-title" class="fw-bold mb-3" style="color: var(--azul-tech); font-size: 2rem;">
+            Nuestra Metodología
+          </h2>
+          <p class="lead text-muted mb-0">
+            En el IES Frei Martín Sarmiento creemos que aprender Tecnología no es solo escuchar teoría. 
+            Es hacer, experimentar, fallar y aprender de los errores. Por eso combinamos conceptos teóricos 
+            con práctica directa en nuestro aula-taller.
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="metodo-card">
+            <div class="metodo-icon">📚</div>
+            <h3>Fundamentos Teóricos</h3>
+            <p>
+              Empezamos con los conceptos clave: qué es una estructura, cómo funciona la electricidad, 
+              por qué el código se ejecuta de esta manera. Entender el "por qué" es fundamental.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="metodo-card">
+            <div class="metodo-icon">🔧</div>
+            <h3>Experiencia Práctica</h3>
+            <p>
+              Inmediatamente llevamos esos conceptos al taller. Construimos estructuras reales, 
+              programamos microcontroladores, diseñamos en 3D. El alumno ve resultados tangibles.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="metodo-card">
+            <div class="metodo-icon">🚀</div>
+            <h3>Proyectos Reales</h3>
+            <p>
+              No hacemos ejercicios sin sentido. Los alumnos trabajan en proyectos reales que resuelven 
+              problemas: automatizar un proceso, fabricar una pieza personalizada, programar un robot.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="metodo-card">
+            <div class="metodo-icon">💡</div>
+            <h3>Aprendizaje Creativo</h3>
+            <p>
+              Animamos a los alumnos a pensar diferente. No hay una única solución correcta. 
+              Valoramos la creatividad, la innovación y el pensamiento crítico.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: COMPONENTES DEL AULA -->
+    <section class="componentes-section" aria-labelledby="componentes-title">
+      <div class="container">
+        <div class="row justify-content-center mb-5 text-center">
+          <div class="col-lg-10">
+            <h2 id="componentes-title" class="fw-bold mb-3" style="color: var(--azul-tech); font-size: 2rem;">
+              Los Componentes de Nuestro Aula-Taller
+            </h2>
+            <p class="lead text-muted mb-0">
+              Contamos con espacios y herramientas que permiten a los alumnos aprender de forma integral
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3">
+            <div class="componente">
+              <div class="componente-icon">🎓</div>
+              <h4>Aula Teórica</h4>
+              <p>Donde presentamos conceptos, discutimos problemas y planificamos proyectos</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="componente">
+              <div class="componente-icon">🛠️</div>
+              <h4>Taller Práctico</h4>
+              <p>Espacio con herramientas, mesas de trabajo y materiales para construir</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="componente">
+              <div class="componente-icon">🖨️</div>
+              <h4>Impresora 3D</h4>
+              <p>Para fabricar prototipos y piezas personalizadas diseñadas en clase</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="componente">
+              <div class="componente-icon">💻</div>
+              <h4>Ordenadores</h4>
+              <p>Para programación, diseño 3D y simulaciones de proyectos</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="componente">
+              <div class="componente-icon">⚡</div>
+              <h4>Componentes Electrónicos</h4>
+              <p>Arduino, Micro:bit, sensores, actuadores...</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="componente">
+              <div class="componente-icon">✂️</div>
+              <h4>Cortadora Láser</h4>
+              <p>Para cortar y grabar diseños en madera, acrílico y otros materiales</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="componente">
+              <div class="componente-icon">📐</div>
+              <h4>Materiales Diversos</h4>
+              <p>Madera, PLA, acrílico, metal... lo que necesitemos para cada proyecto</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3">
+            <div class="componente">
+              <div class="componente-icon">👥</div>
+              <h4>Colaboración</h4>
+              <p>Los alumnos trabajan en equipos, desarrollando habilidades sociales</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERÍA: EL AULA EN ACCIÓN -->
+    <section class="container galeria-taller" aria-labelledby="galeria-title">
+      <h2 id="galeria-title">El Aula en Acción</h2>
+      <p class="text-center text-muted mb-5">
+        Así se ve el trabajo diario en nuestro aula-taller. Aquí combinamos teoría y práctica.
+      </p>
+
+      <div class="row g-4">
+        <!-- Foto 1 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="foto-taller">
+            <div class="foto-placeholder">
+              <i class="bi bi-image"></i>
+              <p>Alumnos trabajando en proyecto</p>
+            </div>
+          </div>
+          <p class="text-center mt-3 small text-muted">Los alumnos colaboran en equipos para resolver desafíos prácticos</p>
+        </div>
+
+        <!-- Foto 2 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="foto-taller">
+            <div class="foto-placeholder">
+              <i class="bi bi-image"></i>
+              <p>Impresora 3D en funcionamiento</p>
+            </div>
+          </div>
+          <p class="text-center mt-3 small text-muted">Fabricación digital: de la idea al objeto físico</p>
+        </div>
+
+        <!-- Foto 3 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="foto-taller">
+            <div class="foto-placeholder">
+              <i class="bi bi-image"></i>
+              <p>Montaje de circuitos</p>
+            </div>
+          </div>
+          <p class="text-center mt-3 small text-muted">Control y programación de componentes electrónicos</p>
+        </div>
+
+        <!-- Foto 4 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="foto-taller">
+            <div class="foto-placeholder">
+              <i class="bi bi-image"></i>
+              <p>Diseño en Tinkercad</p>
+            </div>
+          </div>
+          <p class="text-center mt-3 small text-muted">Aprender a diseñar antes de fabricar</p>
+        </div>
+
+        <!-- Foto 5 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="foto-taller">
+            <div class="foto-placeholder">
+              <i class="bi bi-image"></i>
+              <p>Pruebas de proyectos</p>
+            </div>
+          </div>
+          <p class="text-center mt-3 small text-muted">Testeo y mejora continua de prototipos</p>
+        </div>
+
+        <!-- Foto 6 -->
+        <div class="col-md-6 col-lg-4">
+          <div class="foto-taller">
+            <div class="foto-placeholder">
+              <i class="bi bi-image"></i>
+              <p>Presentación de proyectos</p>
+            </div>
+          </div>
+          <p class="text-center mt-3 small text-muted">Los alumnos explican y defienden sus trabajos</p>
+        </div>
+      </div>
+
+      <div class="alert alert-info mt-5 border-0 rounded-3" role="alert">
+        <i class="bi bi-lightbulb me-2"></i>
+        <strong>📝 Nota:</strong> Las fotos aquí mostradas son placeholders. Se irán sustituyendo con fotos reales del aula-taller.
+      </div>
+    </section>
+
+    <!-- SECCIÓN: VALORES PEDAGÓGICOS -->
+    <section class="valores-section" aria-labelledby="valores-title">
+      <div class="container">
+        <div class="row justify-content-center mb-5 text-center">
+          <div class="col-lg-10">
+            <h2 id="valores-title" class="fw-bold mb-3" style="color: var(--azul-tech); font-size: 2rem;">
+              Valores que Fomentamos
+            </h2>
+            <p class="lead text-muted mb-0">
+              No solo enseñamos Tecnología. Desarrollamos competencias y valores para el futuro.
+            </p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-lg-4">
+            <div class="valor-card">
+              <div class="valor-icon">🎯</div>
+              <h4>Pensamiento Crítico</h4>
+              <p>Enseñamos a cuestionarse, a encontrar problemas y a buscar soluciones innovadoras</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="valor-card">
+              <div class="valor-icon">🤝</div>
+              <h4>Colaboración</h4>
+              <p>Los proyectos se hacen en equipo. El trabajo en grupo es fundamental en el mundo real</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="valor-card">
+              <div class="valor-icon">♻️</div>
+              <h4>Sostenibilidad</h4>
+              <p>Reflexionamos sobre el impacto ambiental de nuestros proyectos y decisiones</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="valor-card">
+              <div class="valor-icon">🔄</div>
+              <h4>Iteración y Mejora</h4>
+              <p>El primer intento raramente es perfecto. Aprendemos de los errores y mejoramos</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="valor-card">
+              <div class="valor-icon">🎨</div>
+              <h4>Creatividad</h4>
+              <p>No hay una única respuesta correcta. Valoramos las soluciones originales y creativas</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="valor-card">
+              <div class="valor-icon">🚀</div>
+              <h4>Innovación</h4>
+              <p>Animamos a explorar nuevas herramientas, técnicas y formas de resolver problemas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CITA DESTACADA -->
+    <section class="container">
+      <div class="cita-destacada">
+        <p>
+          "La práctica sin teoría es ciega; la teoría sin práctica es estéril."
+        </p>
+        <em>— Karl Marx</em>
+      </div>
+    </section>
+
+    <!-- SECCIÓN: LLAMADA A ACCIÓN -->
+    <section class="container py-5 text-center">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="fw-bold mb-3" style="color: var(--azul-tech);">¿Quieres conocer nuestro trabajo?</h2>
+          <p class="lead text-muted mb-4">
+            Explora nuestros proyectos en la galería y descubre lo que hacen los alumnos en el aula-taller.
+          </p>
+          <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a href="galeria.html" class="btn btn-primary btn-lg px-4">
+              <i class="bi bi-images me-2"></i>Ver Proyectos
+            </a>
+            <a href="robotica.html" class="btn btn-outline-primary btn-lg px-4">
+              <i class="bi bi-robot me-2"></i>Robótica y Control
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 🔥 Footer desde plantilla -->
+  <div data-include="plantillas/footer.html"></div>
+
+  <!-- Fallback si no hay JS -->
+  <noscript>
+    <footer class="border-top mt-5 py-4">
+      <div class="container small text-muted">
+        © <span id="copy-year">2026</span> Tecnologías — IES Frei Martín Sarmiento
+      </div>
+    </footer>
+  </noscript>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Includes (navbar, footer) -->
+  <script src="js/includes.js"></script>
+
+  <!-- Marcar enlace activo en navbar -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const link = document.querySelector('a.nav-link[href$="como-trabajamos.html"]');
+      if (link) {
+        link.classList.add('active');
+        link.setAttribute('aria-current', 'page');
+      }
+    });
+  </script>
+</body>
+</html>
